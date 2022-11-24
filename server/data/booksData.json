@@ -1,0 +1,26 @@
+[
+	{
+		"id": "tuesdays-with-morrie",
+		"title": "Tuesdays with Morrie",
+		"author": "Mitch Albom",
+		"description": "Tuesdays with Morrie is a memoir by American author Mitch Albom about a series of visits Albom made to his former sociology professor Morrie Schwartz, as Schwartz gradually dies of ALS.",
+		"price": 16.49,
+		"image": "https://i.imgur.com/qK5m3JK.jpg"
+	},
+	{
+		"id": "crying-in-h-mart",
+		"title": "Crying in H Mart",
+		"author": "Michelle Zauner",
+		"description": "Crying in H Mart: A Memoir is a 2021 memoir by Michelle Zauner, singer and guitarist of the musical project Japanese Breakfast. It is her debut book, published on April 20, 2021, by Alfred A. Knopf. It is an expansion of Zauner's essay of the same name which was published in The New Yorker on August 20, 2018. ",
+		"price": 26.55,
+		"image": "https://i.imgur.com/lVFtsNX.png"
+	},
+	{
+		"id": "in-five-years",
+		"title": "In Five Years",
+		"author": "Rebecca Serle",
+		"description": "Tuesdays with Morrie is a memoir by American author Mitch Albom about a series of visits Albom made to his former sociology professor Morrie Schwartz, as Schwartz gradually dies of ALS.",
+		"price": 14.49,
+		"image": "https://i.imgur.com/7evVAqF.png"
+	}
+]
