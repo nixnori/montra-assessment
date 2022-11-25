@@ -2,14 +2,13 @@ const express = require("express");
 const app = express();
 const cors = require("cors");
 const port = 8000;
-const books = require("./data/books.json");
 const booksData = require("./data/booksData.json");
 
 app.use(cors());
 app.use(express.json());
 
 app.get("/books", (req, res) => {
-	res.status(200).json({ message: "Success", payload: books });
+	res.status(200).json({ message: "Success", payload: booksData });
 });
 
 app.get("/books/:id", (req, res) => {
@@ -17,7 +16,7 @@ app.get("/books/:id", (req, res) => {
 	if (search) {
 		res.status(200).json({ message: "Succes", payload: search });
 	} else {
-		res.status(400).json({ error: "Video not found" });
+		res.status(400).json({ error: "Book not found" });
 	}
 });
 

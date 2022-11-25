@@ -1,22 +1,21 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 const Nav = () => {
-	const textDefaultClassName = "mr-10 text-lg";
-	const active = `${textDefaultClassName} text-gray-500`;
-	const notActive = `${textDefaultClassName} text-gray-580`;
+	const { booksSelected } = useSelector((state) => state.cartTotal);
 
 	return (
-		<div className="bg-slate-300 w-screen h-16 flex flex-col place-content-center px-8">
+		<div className="bg-white shadow-md w-screen h-16 flex flex-col place-content-center px-8 z-10 fixed">
 			<div>
-				<NavLink to="/" className={({ isActive }) => (isActive ? active : notActive)}>
+				<NavLink to="/" className="font-medium mr-10 text-lg hover:text-slate-500">
 					Home
 				</NavLink>
-				<NavLink to="products" className={({ isActive }) => (isActive ? active : notActive)}>
+				<NavLink to="products" className="font-medium mr-10 text-lg hover:text-slate-500">
 					Products
 				</NavLink>
-				<NavLink to="cart" className={({ isActive }) => (isActive ? active : notActive)}>
-					Cart
+				<NavLink to="cart" className="font-medium mr-10 text-lg hover:text-slate-500">
+					{`Cart (${booksSelected.length})`}
 				</NavLink>
 			</div>
 		</div>

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import CartItem from "../components/CartItem";
+import { NavLink } from "react-router-dom";
 
 const Cart = () => {
 	const { booksSelected, cartTotal } = useSelector((state) => state.cartTotal);
@@ -22,10 +23,18 @@ const Cart = () => {
 	}, [booksSelected]);
 
 	return (
-		<div className="p-8 flex flex-col">
-			<h1 className="text-lg mb-8">Cart</h1>
+		<div className="p-16 flex flex-col pt-28">
+			<h1 className="text-4xl mb-8 font-semibold">Cart</h1>
 			{uniqueItems.length === 0 ? (
-				<h3 className="mt-8 text-red-600">No items in cart</h3>
+				<>
+					<h3 className="mt-8">Your cart is currently empty.</h3>
+					<NavLink
+						to="/products"
+						className="font-medium text-sm bg-slate-500 rounded-lg w-fit py-3 px-5 text-white mt-12 hover:bg-slate-600"
+					>
+						Return to Products
+					</NavLink>
+				</>
 			) : (
 				uniqueItems.map((item) => (
 					<CartItem
@@ -40,11 +49,11 @@ const Cart = () => {
 			)}
 			{uniqueItems.length !== 0 && (
 				<div className="flex w-full justify-end">
-					<div className="flex gap-x-8 items-center">
-						<div className="rounded-lg p-4 bg-slate-100">
-							<h3>Total:</h3>
+					<div className="flex gap-x-8 items-center mt-2">
+						<div className="rounded-lg p-4 bg-blue-800">
+							<h3 className="font-semibold text-white">Total</h3>
 						</div>
-						{`$${cartTotal}`}
+						<p className="text-xl font-medium mr-2">{`$${cartTotal.toFixed(2)}`}</p>
 					</div>
 				</div>
 			)}

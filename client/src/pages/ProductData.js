@@ -17,8 +17,7 @@ const ProductData = () => {
 
 	const { title, author, description, id, image, price } = selectedBookData;
 
-	const h3Styles = "font-semibold slate-600";
-	const pStyles = "mb-2";
+	const h3Styles = "font-semibold slate-600 text-xl mt-4";
 
 	const addToCart = () => {
 		dispatch(setBooksSelected(selectedBookData));
@@ -26,21 +25,23 @@ const ProductData = () => {
 	};
 
 	return (
-		<div className="p-8 flex justify-between gap-x-8">
-			<div className="bg-slate-100 p-8 rounded-lg w-4/6">
-				<h3 className={h3Styles}>Title:</h3>
-				<p className={pStyles}>{title}</p>
-				<h3 className={h3Styles}>Author:</h3>
-				<p className={pStyles}>{author}</p>
-				<h3 className={h3Styles}>Description:</h3>
-				<p className={pStyles}>{description}</p>
+		<div className="p-16 flex justify-between gap-x-8 pt-28">
+			<div className="bg-slate-200 p-10 rounded-lg w-4/6">
+				<h1 className="text-4xl font-semibold mb-2">{title}</h1>
+				<h3 className={h3Styles}>by</h3>
+				<p className="mb-10">{author}</p>
+				<h3 className={h3Styles}>Description</h3>
+				<p>{description}</p>
 			</div>
-			<div className="w-2/6 object-cover flex flex-col bg-slate-100 rounded-lg py-6 items-center">
-				<ProductImageCard id={id} imageSrc={image} altText={title} productDetailsPage />
-				<h3 className={`${h3Styles} mt-2`}>Price: {`$${price}`}</h3>
-				<button onClick={addToCart} className="mt-4 bg-slate-500 py-2 px-4 rounded-lg text-white">
-					Add to cart
-				</button>
+			<div className="w-2/6 object-cover flex flex-col bg-slate-100 rounded-lg py-10 items-center">
+				<ProductImageCard
+					id={id}
+					imageSrc={image}
+					title={title}
+					productDetailsPage
+					price={price}
+					addToCart={addToCart}
+				/>
 			</div>
 		</div>
 	);
